@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\Tracker\\Tracker\\Tracker\\Tracker.csproj": {}
+    "D:\\Projects\\Tracker\\Tracker\\Tracker\\Tracker.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\Tracker\\Tracker\\Tracker\\Tracker.csproj": {
+    "D:\\Projects\\Tracker\\Tracker\\Tracker\\Tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\Tracker\\Tracker\\Tracker\\Tracker.csproj",
+        "projectUniqueName": "D:\\Projects\\Tracker\\Tracker\\Tracker\\Tracker.csproj",
         "projectName": "Tracker",
-        "projectPath": "D:\\GitHub\\Tracker\\Tracker\\Tracker\\Tracker.csproj",
-        "packagesPath": "C:\\Users\\Benjamin Covington\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\Tracker\\Tracker\\Tracker\\obj\\",
+        "projectPath": "D:\\Projects\\Tracker\\Tracker\\Tracker\\Tracker.csproj",
+        "packagesPath": "C:\\Users\\Ashley\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Tracker\\Tracker\\Tracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Benjamin Covington\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Ashley\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -41,6 +40,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "FireSharp": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
