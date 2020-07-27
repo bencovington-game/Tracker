@@ -7,8 +7,9 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 using Tracker.Models;
-using Task = Tracker.Models.Task;
+using ToDo = Tracker.Models.ToDo;
 
 namespace Tracker.Controllers
 {
@@ -20,9 +21,14 @@ namespace Tracker.Controllers
             BasePath = "https://trackerapp-bf153.firebaseio.com/"
         };
         IFirebaseClient client;
-        public ActionResult Index()
+
+        [HttpGet]
+        public async Task<IActionResult> IndexAsync()
         {
-            return View();
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = await client.GetAsync("Tasks");
+            ToDo task = response.ResultAs<ToDo>();
+            return View(task);
         }
 
         [HttpGet]
@@ -32,7 +38,7 @@ namespace Tracker.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Task task)
+        public ActionResult Create(ToDo task)
         {
             try
             {
@@ -46,7 +52,7 @@ namespace Tracker.Controllers
             return View();
         }
 
-        private void AddTaskToFirebase(Task task)
+        private void AddTaskToFirebase(ToDo task)
         {
             client = new FireSharp.FirebaseClient(config);
             var data = task;
@@ -54,5 +60,15 @@ namespace Tracker.Controllers
             data.task_id = response.Result.name;
             SetResponse setResponse = client.Set("Tasks/" + data.task_id, data);
         }
+
+        //private async void QueryTaskFromFirebase()
+        //{
+        //    client = new FireSharp.FirebaseClient(config);
+
+        //    //FirebaseResponse resp = await client.GetAsync("branch/branch", obj);
+        //    dynamic things = await client.GetAsync("Tasks");
+        //    //Task t = resp.ResultAs<Task>();
+        //    IAsyncEnumerable<Task> t = (IAsyncEnumerable<Task>)await client.GetAsync("Tasks");
+        //}
     }
 }
