@@ -8,6 +8,7 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using Newtonsoft.Json;
 using Tracker.Models;
 using ToDo = Tracker.Models.ToDo;
 
@@ -23,12 +24,13 @@ namespace Tracker.Controllers
         IFirebaseClient client;
 
         [HttpGet]
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> ToDos()
         {
             client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = await client.GetAsync("Tasks");
-            ToDo task = response.ResultAs<ToDo>();
-            return View(task);
+            FirebaseResponse response = await client.GetAsync("Tasks/");
+            Dictionary<string, ToDo> data = response.ResultAs<Dictionary<string, ToDo>>();
+            ToDo task = data["-MD7UeOHRLc0-7pOlBIq"];
+            return Ok(task);
         }
 
         [HttpGet]
