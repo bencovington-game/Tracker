@@ -1,3 +1,6 @@
 *.so
 *.suo
 *.cache
+*.props
+*.json
+*.txt
