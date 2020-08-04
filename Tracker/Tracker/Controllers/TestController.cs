@@ -13,17 +13,10 @@ namespace Tracker.Controllers
 {
     public class TestController : Controller
     {
-        //IFirebaseConfig config = new FirebaseConfig
-        //{
-        //    AuthSecret = "fqBJG0xb4P06miU7cfhLv6bZ3KD0sM1iA9SUfF48",
-        //    BasePath = "https://trackerapp-bf153.firebaseio.com/"
-        //};
-        //IFirebaseClient client;
-
         [HttpGet]
         public async Task<IActionResult> ToDos()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"trackerapp-bf153-firebase-adminsdk-bwqab-9888d4cc15.json";
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"\..\..\..\..\..\secrets\firebase-adminsdk.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
             FirestoreDb db = FirestoreDb.Create("trackerapp-bf153");
@@ -42,7 +35,7 @@ namespace Tracker.Controllers
             //FirebaseResponse response = await client.GetAsync("Tasks/");
             //Dictionary<string, ToDo> data = response.ResultAs<Dictionary<string, ToDo>>();
             //ToDo task = data["-MD7UeOHRLc0-7pOlBIq"];
-            return Ok("#: " + numTimes + " User: " + userID);
+            return Ok(userID);
         }
 
         [HttpGet]
