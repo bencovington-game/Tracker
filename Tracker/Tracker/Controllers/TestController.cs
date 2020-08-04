@@ -20,6 +20,21 @@ namespace Tracker.Controllers
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
             FirestoreDb db = FirestoreDb.Create("trackerapp-bf153");
+
+            DocumentReference docRef = db.Collection("users").Document("-MD7UeOHRLc0-7pOlBIq");
+            DocumentSnapshot snap = await docRef.GetSnapshotAsync();
+
+            if(snap.Exists)
+            {
+                Dictionary<string, object> city = snap.ToDictionary();
+                foreach (var item in city)
+                {
+
+                }
+            }
+
+
+
             CollectionReference usersRef = db.Collection("users");
             QuerySnapshot snapshot = await usersRef.GetSnapshotAsync();
             int numTimes = 0;
