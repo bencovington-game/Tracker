@@ -16,7 +16,7 @@ namespace Tracker.Models
         public Timestamp CreationDate { get; }
 
         [FirestoreDocumentUpdateTimestamp]
-        public Timestamp? UpdateTimestamp { get; }
+        public Timestamp? UpdateDate { get; }
 
         [FirestoreProperty]
         public Timestamp? CompletionDate { get; set; }
