@@ -34,7 +34,6 @@ namespace Tracker.Controllers
             }
 
 
-
             CollectionReference usersRef = db.Collection("users");
             QuerySnapshot snapshot = await usersRef.GetSnapshotAsync();
             int numTimes = 0;
