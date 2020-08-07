@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 using Newtonsoft.Json;
 using Tracker.Models;
 using Google.Cloud.Firestore;
@@ -16,9 +15,6 @@ namespace Tracker.Controllers
         [HttpGet]
         public async Task<IActionResult> ToDos()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"\..\..\..\..\..\secrets\firebase-adminsdk.json";
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-
             FirestoreDb db = FirestoreDb.Create("trackerapp-bf153");
 
             DocumentReference docRef = db.Collection("users").Document("-MD7UeOHRLc0-7pOlBIq");
