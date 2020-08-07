@@ -9,6 +9,7 @@ $('[data-toggle=sidebar-colapse]').click(function () {
     SidebarCollapse();
 });
 
+
 function SidebarCollapse() {
     $('.menu-collapsed').toggleClass('d-none');
     $('.sidebar-submenu').toggleClass('d-none');

@@ -5,6 +5,59 @@
     Layout = "~/Views/Shared/_AppLayout.cshtml";
 }
 
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary d-none d-md-block"">
+    <div class="collapse navbar-collapse d-flex justify-content-between bg-primary" id="navbarNavDropdown">
+
+        <a class="navbar-brand bg-primary"
+           href="#">
+            <span class="fa fa-scroll fa-fw mr-3"
+                  width="30"
+                  height="30">
+            </span>
+            <span @*class="menu-collapsed"*@>Tracker</span>
+        </a>
+
+        <ul class="navbar-nav text-light bg-warning">
+            <!--------------------------<Desktop>--------------------------------->
+            <li class="nav-item d-sm-block d-md-none">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <a class="fa fa-plus-circle fa-fw mr-3 nav-link" href="#top"></a>
+                    <a class="nav-link" href="#top">Create</a>
+                </div>
+            </li>
+
+            <li class="nav-item d-none d-md-block my-auto">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <a class="fa fa-info-circle fa-fw mr-3 nav-link" href="#top"></a>
+                    <a class="nav-link" href="#top">Info</a>
+                </div>
+            </li>
+
+            <li class="nav-item d-none d-md-block my-auto">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <a class="fa fa-search fa-fw mr-3 nav-link" href="#top"></a>
+                    <a class="nav-link" href="#top">Info</a>
+                </div>
+            </li>
+
+            <!---------------------------<Mobile>--------------------------------->
+            <!--
+    <li class="nav-item d-sm-block d-md-none">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+            <a class="fa fa-home fa-fw mr-3 nav-link" href="#top"></a>
+            <a class="nav-link" href="#top">Home</a>
+        </div>
+    </li>
+    -->
+
+        </ul>
+    </div>
+</nav><!-- NavBar END -->
+
+
+
 <h1>ProjectNotes</h1>
 
 <p>
@@ -26,23 +79,24 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
