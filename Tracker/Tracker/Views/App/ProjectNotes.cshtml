@@ -7,50 +7,60 @@
 
 
 
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary d-none d-md-block"">
-    <div class="collapse navbar-collapse d-flex justify-content-between bg-primary" id="navbarNavDropdown">
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary"">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav text-light">
 
-        <a class="navbar-brand bg-primary"
-           href="#">
-            <span class="fa fa-scroll fa-fw mr-3"
-                  width="30"
-                  height="30">
-            </span>
-            <span @*class="menu-collapsed"*@>Tracker</span>
-        </a>
-
-        <ul class="navbar-nav text-light bg-warning">
+            <!-- Currently just set-up to display reguardless of screen size -->
             <!--------------------------<Desktop>--------------------------------->
-            <li class="nav-item d-sm-block d-md-none">
+
+            <li class="nav-item my-auto">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <a class="fa fa-plus-circle fa-fw mr-3 nav-link" href="#top"></a>
+                    <a class="fa fa-plus-circle fa-fw mr-0 nav-link" href="#top"></a>
                     <a class="nav-link" href="#top">Create</a>
                 </div>
             </li>
 
-            <li class="nav-item d-none d-md-block my-auto">
+            <li class="nav-item my-auto">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <a class="fa fa-info-circle fa-fw mr-3 nav-link" href="#top"></a>
+                    <a class="fa fa-info-circle fa-fw mr-0 nav-link" href="#top"></a>
                     <a class="nav-link" href="#top">Info</a>
                 </div>
             </li>
 
-            <li class="nav-item d-none d-md-block my-auto">
+            <li class="nav-item my-auto">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <a class="fa fa-search fa-fw mr-3 nav-link" href="#top"></a>
-                    <a class="nav-link" href="#top">Info</a>
+                    <a class="fa fa-search fa-fw mr-0 nav-link" href="#top"></a>
+                    <a class="nav-link" href="#top">Search</a>
+                </div>
+            </li>
+
+            <li class="nav-item my-auto">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <a class="fa fa-filter fa-fw mr-0 nav-link" href="#top"></a>
+                    <a class="nav-link" href="#top">Filter</a>
+                </div>
+            </li>
+
+            <li class="nav-item my-auto">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <a class="fa fa-sort-amount-down fa-fw mr-0 nav-link" href="#top"></a>
+                    <a class="nav-link" href="#top">Sort</a>
                 </div>
             </li>
 
             <!---------------------------<Mobile>--------------------------------->
+                
             <!--
-    <li class="nav-item d-sm-block d-md-none">
-        <div class="d-flex w-100 justify-content-start align-items-center">
-            <a class="fa fa-home fa-fw mr-3 nav-link" href="#top"></a>
-            <a class="nav-link" href="#top">Home</a>
-        </div>
-    </li>
-    -->
+            <li class="nav-item d-sm-block d-md-none">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <a class="fa fa-home fa-fw mr-3 nav-link" href="#top"></a>
+                    <a class="nav-link" href="#top">Home</a>
+                </div>
+            </li>
+            -->
+
+
 
         </ul>
     </div>
