@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
 @using System.Security.Claims
 @model Tracker.Models.LoginViewModel
 @{
@@ -9,25 +10,46 @@
 
 @using (Html.BeginForm())
 {
+    
     @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        <h4>Sign up for Tracker!</h4>
-        <hr />
+    <div class="form-horizontal bg-light col w-50 mx-auto">
+        <!-- Title as a Header -->
+        <h4 class="row justify-content-center">Sign up for Tracker!</h4>
+        
+        <!-- Divider -->
+        <hr class="row" />
+        
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group bg-light row justify-content-center">
+
+        @*<label class="control-label col-md-2" for="Email">Email</label>*@
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        
+        <div id="email-field">
+            @* // This is the HTML code that RAZOR compiles
+            <input class="text-box single-line"
+                data-val="true"
+                data-val-required="The Email field is required."
+                id="Email"
+                name="Email"
+                type="email"
+                value="">*@
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
         </div>
 
-        <div class="form-group">
+    </div>
+
+        <div class="form-group bg-light row justify-content-center">
             @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
             <div>
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
         </div>
-        <input type="submit" name="SaveButton" value="Save" />
+        
+        <div class="bg-light row justify-content-center">
+            <input type="submit" name="SaveButton" value="Sign in" class="w-25"/>
+        </div>
     </div>
 }

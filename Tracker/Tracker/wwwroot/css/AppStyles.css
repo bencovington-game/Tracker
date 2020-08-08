@@ -1,5 +1,6 @@
 ﻿:root {
-    --sidebar-bg-color: #0097a7ff;
+/*    --sidebar-bg-color: #0097a7ff;*/
+    --sidebar-bg-color: #000000;
 }
 
 #body-row {
@@ -9,7 +10,7 @@
 
 #sidebar-container {
     min-height: 100vh;
-    background-color: var(--sidebar-bg-color);
+/*    background-color: var(--sidebar-bg-color);*/
 }
 
 /* Sidebar sizes when expanded and expanded */
@@ -24,7 +25,8 @@
 /* Menu item*/
 #sidebar-container .list-group a {
     height: 50px;
-    color: white;
+/*    color: white;*/
+    color: black;
 }
 
 /* Submenu item*/
@@ -39,17 +41,17 @@
 
 /* Separators */
 .sidebar-separator-title {
-    background-color: var(--sidebar-bg-color);
+/*    background-color: var(--sidebar-bg-color);*/
     height: 35px;
 }
 
 .sidebar-separator {
-    background-color: var(--sidebar-bg-color);
+/*    background-color: var(--sidebar-bg-color);*/
     height: 25px;
 }
 
 .logo-separator {
-    background-color: var(--sidebar-bg-color);
+/*    background-color: var(--sidebar-bg-color);*/
     height: 60px;
 }
 
