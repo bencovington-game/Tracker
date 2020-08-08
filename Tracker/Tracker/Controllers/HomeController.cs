@@ -41,7 +41,6 @@ namespace Tracker.Controllers
         {
             FirebaseApp app = FirebaseApp.Create();
             FirebaseAuth auth = FirebaseAuth.GetAuth(app);
-
             
             if (ModelState.IsValid)
             {
@@ -62,59 +61,59 @@ namespace Tracker.Controllers
         }
 
 
-        [HttpGet]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> LogInAsync(LoginViewModel loginModel)
-        {
+        //[HttpGet]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> LogInAsync(LoginViewModel loginModel)
+        //{
 
-            //FirebaseApp app = FirebaseApp.Create();
-            //FirebaseAuth auth = FirebaseAuth.GetAuth(app);
-            //IReadOnlyDictionary<string, object> claims 
-            //    = new Dictionary<string, object> 
-            //{ 
-            //        { "Email", loginModel.Email }, 
-            //        { "Password", loginModel.Password }
-            //};
-            //UserRecord rec = await auth.GetUserByEmailAsync(loginModel.Email);
-            //await auth.SetCustomUserClaimsAsync(rec.Uid, claims);
+        //    //FirebaseApp app = FirebaseApp.Create();
+        //    //FirebaseAuth auth = FirebaseAuth.GetAuth(app);
+        //    //IReadOnlyDictionary<string, object> claims 
+        //    //    = new Dictionary<string, object> 
+        //    //{ 
+        //    //        { "Email", loginModel.Email }, 
+        //    //        { "Password", loginModel.Password }
+        //    //};
+        //    //UserRecord rec = await auth.GetUserByEmailAsync(loginModel.Email);
+        //    //await auth.SetCustomUserClaimsAsync(rec.Uid, claims);
 
-            //string token = await auth.CreateCustomTokenAsync(userRec.Uid);
+        //    //string token = await auth.CreateCustomTokenAsync(userRec.Uid);
 
-            //if (ModelState.IsValid)
-            //{
+        //    //if (ModelState.IsValid)
+        //    //{
 
-            //}
-
-
-
-            //FirebaseApp app = FirebaseApp.Create();
-            //FirebaseAuth auth = FirebaseAuth.GetAuth(app);
-
-            //if(ModelState.IsValid)
-            //{
+        //    //}
 
 
 
-            //    UserRecordArgs args = new UserRecordArgs()
-            //    {   Email = loginModel.Email,
-            //        Password = loginModel.Password
-            //    };
-            //    //FirebaseAuth.DefaultInstance.
-            //    //UserRecord userRecord = await FirebaseAuth.DefaultInstance.
-            //    //FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(User.)
-            //    UserRecord fbUser = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(args.Email);
-            //    try
-            //    {
-            //        var token = await FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(fbUser.Uid);
-            //    }
-            //    catch(Exception e)
-            //    {
-            //        return this.StatusCode(401, new { Error = e.Message });
-            //    }
-            //    //Firebase token = await FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(fbUser.Uid);
-            //}
-            return Ok("Logged in");
-        }
+        //    //FirebaseApp app = FirebaseApp.Create();
+        //    //FirebaseAuth auth = FirebaseAuth.GetAuth(app);
+
+        //    //if(ModelState.IsValid)
+        //    //{
+
+
+
+        //    //    UserRecordArgs args = new UserRecordArgs()
+        //    //    {   Email = loginModel.Email,
+        //    //        Password = loginModel.Password
+        //    //    };
+        //    //    //FirebaseAuth.DefaultInstance.
+        //    //    //UserRecord userRecord = await FirebaseAuth.DefaultInstance.
+        //    //    //FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(User.)
+        //    //    UserRecord fbUser = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(args.Email);
+        //    //    try
+        //    //    {
+        //    //        var token = await FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(fbUser.Uid);
+        //    //    }
+        //    //    catch(Exception e)
+        //    //    {
+        //    //        return this.StatusCode(401, new { Error = e.Message });
+        //    //    }
+        //    //    //Firebase token = await FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(fbUser.Uid);
+        //    //}
+        //    return Ok("Logged in");
+        //}
 
         public IActionResult Login()
         {
